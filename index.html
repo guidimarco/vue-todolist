@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ToDoList con VUE</title>
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+        <!-- CSS link -->
+        <link rel="stylesheet" href="assets/style.css">
+
+        <!-- VUE CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="root">
+
+            <div class="todo-wrapper">
+                <!-- TOP: title -->
+                <h1>{{ toDoTitle }}</h1>
+
+                <!-- BTM: to do list -->
+                <ul class="todo-list">
+                    <li v-for="toDo in toDoList">
+                        {{ toDo }}
+                    </li>
+                </ul>
+            </div><!-- END BTM DIV: carousel wrapper -->
+        </div><!-- END OF #ROOT -->
+
+        <!-- javascript -->
+        <script type="text/javascript" src="assets/main.js"></script>
+    </body>
+</html>
