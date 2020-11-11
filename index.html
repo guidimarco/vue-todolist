@@ -37,6 +37,29 @@
                 </div>
 
             </div><!-- END DIV: todo wrapper -->
+
+            <div class="done-wrapper">
+
+                <!-- TOP: title -->
+                <h1>{{ doneTitle }}</h1>
+
+                <!-- CENTER: to do list -->
+                <ul class="todo-list">
+                    <li v-for="(toDo, toDoIndex) in toDoList">
+                        <i class="far fa-square" :ref="'icon' + toDoIndex" @click="removeToDo(toDoIndex)"></i>
+                        {{ toDo }}
+                    </li>
+                </ul>
+
+                <!-- BTM: add a to do item -->
+                <div class="add-to-do">
+                    <input type="text" v-model="toDoNewItem" placeholder="Inserisci una nuova cosa da fare" @keydown.enter="addNewToDo">
+                    <button type="button" @click="addNewToDo">Aggiungi alla lista</button>
+                </div>
+
+            </div><!-- END DIV: done wrapper -->
+
+
         </div><!-- END OF #ROOT -->
 
         <!-- javascript -->

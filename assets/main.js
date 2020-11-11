@@ -9,7 +9,8 @@ var app = new Vue({
             "Comprare un panino",
             "Pulire camera",
             "Andare in palestra"
-        ]
+        ],
+        removeControl: true
     },
     methods: {
         addNewToDo: function() {
@@ -21,26 +22,33 @@ var app = new Vue({
             this.toDoNewItem = "";
         },
         removeToDo: function(thisToDoIndex) {
-            // console.log(thisToDoIndex);
+            if (this.removeControl) {
+                // CHANGE VALUE OF SENTINEL VAR
+                this.removeControl = false;
 
-            // VAR ASSIGNMENT
-            actualToDoList = this.toDoList;
-            currentIcon = "icon" + thisToDoIndex;
+                // console.log(thisToDoIndex);
 
-            // CHANGE CHECK-ICON
-            console.log(this.$refs); // CONTROL
-            console.log(this.$refs[currentIcon]); // CONTROL
+                // VAR ASSIGNMENT
+                actualToDoList = this.toDoList;
+                currentIcon = "icon" + thisToDoIndex;
 
-            this.$refs[currentIcon][0].className = "fas fa-check-square"; // CHANGE THE CLASS OF THIS ICON
-            console.log(this.$refs[currentIcon]); // CONTROL
-
-            setTimeout( () => {
-                this.$refs[currentIcon][0].className = "far fa-square"; // RE-CHANGE THE CLASS
-                actualToDoList.splice(thisToDoIndex, 1); // CANCEL THIS ITEM AFTER 1 SEC
+                // CHANGE CHECK-ICON
                 // console.log(this.$refs); // CONTROL
-            }, 1000);
+                // console.log(this.$refs[currentIcon]); // CONTROL
 
-            // console.log(this.toDoList);
+                this.$refs[currentIcon][0].className = "fas fa-check-square"; // CHANGE THE CLASS OF THIS ICON
+                // console.log(this.$refs[currentIcon]); // CONTROL
+
+                setTimeout( () => {
+                    this.$refs[currentIcon][0].className = "far fa-square"; // RE-CHANGE THE CLASS
+                    actualToDoList.splice(thisToDoIndex, 1); // CANCEL THIS ITEM AFTER 1 SEC
+                    // console.log(this.$refs); // CONTROL
+
+                    // RE-CHANGE VALUE OF SENTINEL VAR
+                    this.removeControl = true;
+                }, 1000);
+            }
+
         }
     }
 });
