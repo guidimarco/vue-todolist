@@ -13,8 +13,12 @@ var app = new Vue({
     },
     methods: {
         addNewToDo: function() {
+            // PUSH NEW TO DO ITEM
             this.toDoList.push(this.toDoNewItem);
             // console.log(this.toDoList);
+
+            // CLEAR THE INPUT VALUE
+            this.toDoNewItem = "";
         },
         removeToDo: function(thisToDoIndex) {
             // console.log(thisToDoIndex);
