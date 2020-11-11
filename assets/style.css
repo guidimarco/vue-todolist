@@ -26,18 +26,22 @@ h1 {
 }
 
 /* <1-fold .todo-wrapper */
-.todo-wrapper {
+.todo-wrapper,
+.done-wrapper {
     width: 600px;
     background-color: white;
     border-radius: 20px;
     position: relative;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
-.todo-list {
+.todo-list,
+.done-list {
     list-style-type: none;
 }
-.todo-list li {
+.todo-list li,
+.done-list li {
     padding-bottom: 5px;
 }
 

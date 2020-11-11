@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#root",
     data: {
         toDoTitle: "Cose da fare:",
+        doneTitle: "Cose fatte:",
         toDoNewItem: "",
         checkToDo: "fa-square",
         toDoList: [
@@ -10,6 +11,7 @@ var app = new Vue({
             "Pulire camera",
             "Andare in palestra"
         ],
+        doneList: [],
         removeControl: true
     },
     methods: {
@@ -41,6 +43,8 @@ var app = new Vue({
 
                 setTimeout( () => {
                     this.$refs[currentIcon][0].className = "far fa-square"; // RE-CHANGE THE CLASS
+                    this.doneList.push(actualToDoList[thisToDoIndex]); // PUSH IN DONE LIST
+                    // console.log(this.doneList);
                     actualToDoList.splice(thisToDoIndex, 1); // CANCEL THIS ITEM AFTER 1 SEC
                     // console.log(this.$refs); // CONTROL
 
