@@ -18,16 +18,25 @@
         <div id="root">
 
             <div class="todo-wrapper">
+
                 <!-- TOP: title -->
                 <h1>{{ toDoTitle }}</h1>
 
-                <!-- BTM: to do list -->
+                <!-- CENTER: to do list -->
                 <ul class="todo-list">
                     <li v-for="toDo in toDoList">
                         {{ toDo }}
                     </li>
                 </ul>
-            </div><!-- END BTM DIV: carousel wrapper -->
+
+                <!-- BTM: add a to do item -->
+                <div class="addToDo">
+                    <input type="text" v-model="toDoNewItem" placeholder="Inserisci una nuova cosa da fare">
+                    <button type="button" @click="addNewToDo">Aggiungi alla lista</button>
+                    <p>{{ toDoNewItem }}</p>
+                </div>
+
+            </div><!-- END DIV: todo wrapper -->
         </div><!-- END OF #ROOT -->
 
         <!-- javascript -->
