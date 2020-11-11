@@ -27,7 +27,7 @@ h1 {
 
 /* <1-fold .todo-wrapper */
 .todo-wrapper {
-    width: 400px;
+    width: 600px;
     height: 400px;
     background-color: white;
     border-radius: 20px;
@@ -36,7 +36,19 @@ h1 {
 }
 
 .todo-list {
-    /* inserire stile */
+    list-style-type: none;
 }
+.todo-list li {
+    padding-bottom: 5px;
+}
+
+.add-to-do input {
+    width: 60%;
+    padding: 5px;
+}
+.add-to-do button {
+    padding: 5px;
+}
+
 
 /* </1-fold END .todo-wrapper */

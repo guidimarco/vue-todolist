@@ -24,16 +24,16 @@
 
                 <!-- CENTER: to do list -->
                 <ul class="todo-list">
-                    <li v-for="(toDo, toDoIndex) in toDoList" @click="removeToDo(toDoIndex)">
+                    <li v-for="(toDo, toDoIndex) in toDoList">
+                        <i class="far fa-square" :ref="'icon' + toDoIndex" @click="removeToDo(toDoIndex)"></i>
                         {{ toDo }}
                     </li>
                 </ul>
 
                 <!-- BTM: add a to do item -->
-                <div class="addToDo">
+                <div class="add-to-do">
                     <input type="text" v-model="toDoNewItem" placeholder="Inserisci una nuova cosa da fare" @keydown.enter="addNewToDo">
                     <button type="button" @click="addNewToDo">Aggiungi alla lista</button>
-                    <!-- <p>{{ toDoNewItem }}</p> -->
                 </div>
 
             </div><!-- END DIV: todo wrapper -->

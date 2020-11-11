@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         toDoTitle: "Cose da fare:",
         toDoNewItem: "",
+        checkToDo: "fa-square",
         toDoList: [
             "Fare il bucato",
             "Comprare un panino",
@@ -17,7 +18,24 @@ var app = new Vue({
         },
         removeToDo: function(thisToDoIndex) {
             // console.log(thisToDoIndex);
-            this.toDoList.splice(thisToDoIndex, 1);
+
+            // VAR ASSIGNMENT
+            actualToDoList = this.toDoList;
+            currentIcon = "icon" + thisToDoIndex;
+
+            // CHANGE CHECK-ICON
+            console.log(this.$refs); // CONTROL
+            console.log(this.$refs[currentIcon]); // CONTROL
+
+            this.$refs[currentIcon][0].className = "fas fa-check-square"; // CHANGE THE CLASS OF THIS ICON
+            console.log(this.$refs[currentIcon]); // CONTROL
+
+            setTimeout( () => {
+                this.$refs[currentIcon][0].className = "far fa-square"; // RE-CHANGE THE CLASS
+                actualToDoList.splice(thisToDoIndex, 1); // CANCEL THIS ITEM AFTER 1 SEC
+                // console.log(this.$refs); // CONTROL
+            }, 1000);
+
             // console.log(this.toDoList);
         }
     }
