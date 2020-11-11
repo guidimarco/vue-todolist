@@ -31,7 +31,7 @@
 
                 <!-- BTM: add a to do item -->
                 <div class="addToDo">
-                    <input type="text" v-model="toDoNewItem" placeholder="Inserisci una nuova cosa da fare">
+                    <input type="text" v-model="toDoNewItem" placeholder="Inserisci una nuova cosa da fare" @keydown.enter="addNewToDo">
                     <button type="button" @click="addNewToDo">Aggiungi alla lista</button>
                     <p>{{ toDoNewItem }}</p>
                 </div>
