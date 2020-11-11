@@ -14,6 +14,11 @@ var app = new Vue({
         addNewToDo: function() {
             this.toDoList.push(this.toDoNewItem);
             // console.log(this.toDoList);
+        },
+        removeToDo: function(thisToDoIndex) {
+            // console.log(thisToDoIndex);
+            this.toDoList.splice(thisToDoIndex, 1);
+            // console.log(this.toDoList);
         }
     }
 });
